@@ -1,0 +1,33 @@
+{% extends 'pizzapp/base.html' %}
+{% load static %}
+{% load my_filters %}
+{% block content %}
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Order Now!</title>
+    <link href="{% static '/pizzapp/css/guest_or_user.css' %}" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+<div class="page_content">
+    <div class="page_description">
+        <h4> Do you want to login, register, or continue as a guest?</h4>
+    </div>
+    <div class="page_information">
+        <div class="buttons_of_choice">
+            <a class="btn_1 btn btn-success btn-lg" href="{% url 'register' %}" role="button">Register</a>
+            <a class="btn_2 btn btn-success btn-lg" href="{% url 'customer_entry_form' %}" role="button">Continue as Guest</a>
+            <a class="btn_3 btn btn-danger btn-lg" href="{% url 'login' %}" role="button">Login</a>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+</body>
+</html>
+{% endblock %}

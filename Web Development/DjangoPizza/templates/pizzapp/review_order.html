@@ -1,0 +1,81 @@
+{% extends 'pizzapp/base.html' %}
+{% load static %}
+{% load my_filters %}
+{% block content %}
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Review</title>
+    <link href="{% static '/pizzapp/css/review_order.css' %}" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+<div class="order_confirmation_title">
+    <h1>Order Details</h1>
+</div>
+<div class="review_contents">
+    <div class="column_left"></div>
+    <div class="column_center">
+        <div class="list_title">
+            <h4>Please Review Your Order</h4>
+        </div>
+        {% for instance in getcart %}
+            <Table class="order_item_table" data-cart-row="{{ instance.pk }}">
+                <tr class="order_item_row">
+                    <td class="order_image border_cell">
+                        <img class="order_image_view" src="{% static 'pizzapp/images/order_menu/'%}{{ instance.product_picture }}" alt="order-item">
+                    </td>
+                    <td class="order_item_description border_cell">
+                        <p>{{ instance.product_name }}</p>
+                    </td>
+                    <td class="order_item_quantity border_cell">
+                        <p>X {{ instance.quantity }}</p>
+                    </td>
+                    <td class="order_item_price border_cell">
+                        <p>${{ instance.price }}</p>
+                    </td>
+                    <td class="edit_item_btns border_cell">
+                        <a href="{% url 'orders' %}"><button type="button" class="btn btn-success editbtn1">Edit</button></a>
+                    </td>
+                    <td class="remove_item_btns border_cell">
+                        <button type="button" class="btn btn-danger editbtn2 remove_item update-cart" data-cartitem="{{ instance.pk }}" data-action="remove">Remove</button>
+                    </td>
+                </tr>
+            </Table>
+        {% endfor %}
+            <div class="order_total_list_contents">
+                <table class="cart_totals" id="cart_total_id">
+                    <tr class="subtotal_row">
+                        <td class="card-text subtotal_cell border_cell" id="subtotal">Subtotal:</td>
+                        <td class="card-text subtotal_number_cell border_cell amount" id="subtotal_number">${{ existing_order.subtotal }}</td>
+                    </tr>
+                    <tr class="delivery_fee_row">
+                        <td class="card-text delivery_fee_cell border_cell"  id="delivery_fee">Delivery Fee:</td>
+                        <td class="card-text delivery_fee_number_cell border_cell amount" id="delivery_fee_number">${{ existing_order.delivery_fee }}</td>
+                    </tr>
+                    <tr class="tax_row">
+                        <td class="card-text tax_cell border_cell" id="tax">Tax:</td>
+                        <td class="card-text tax_number_cell border_cell amount" id="tax_number">${{ existing_order.tax }}</td>
+                    </tr>
+                    <tr class="grand_total_row">
+                        <td class="card-text grand_total_cell border_cell"id="grand_total">Grand Total:</td>
+                        <td class="card-text grand_total_number_cell border_cell amount"id="grand_total_number">${{ existing_order.grand_total }}</td>
+                    </tr>
+                    <tr class="checkout_row">
+                        <td class="checkout_btn_row">
+                            <a href="{% url 'payment' %}" class="btn btn-success checkout_button">Pay</a>
+                        </td>
+                        <td class="checkout_btn_row">
+                            <a href="{% url 'index' %}" class="btn btn-danger cancel_button">Cancel</a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+    </div>
+    <div class="column_right"></div>
+</div>
+</div>
+</body>
+</html>
+{% endblock %}

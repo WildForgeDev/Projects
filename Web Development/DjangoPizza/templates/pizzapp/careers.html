@@ -1,0 +1,127 @@
+{% extends 'pizzapp/base.html' %}
+{% load crispy_forms_filters %}
+{% load static %}
+{% load my_filters %}
+{% block content %}
+{% load crispy_forms_tags %}
+<!doctype html>
+<html lang="EN">
+<head>
+    <meta charset="utf-8">
+    <title>Careers</title>
+    <link href="{% static '/pizzapp/css/careers.css' %}" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+<div class="career_title">
+    <h1>Come and join the one and only Django team!</h1>
+</div>
+<div class="career_text">
+        <h2>Do you like pizza but can handle the temptation of eating it before handing it over to our beloved customers? Then
+        you came to the right place to live that dream of being part of the famous pizza making Django family! Not only will
+        you be surrounded by pizza all day and smelling like you just came from Italy but you will have the opportunity
+        of gaining important life skills here at Django's Pizza. So are you ready to become a gourmet pizza chef or something else? Check
+        out our current openings below:</h2>
+    </div>
+
+<div class="position_text1">
+        <h2>Delivery Driver</h2>
+        <p>
+            We are seeking a reliable pizza delivery driver to transport pizza from our restaurant to our customers. In
+            this position, you will be required to confirm that orders have been correctly fulfilled before delivering the
+            product to customers. You will also need to process cash and card payments. To be successful as a pizza delivery
+            driver, you should be efficient, friendly, and service-oriented. Top candidates will be familiar with the area in
+            which we deliver, and will remain up-to-date with our restaurant’s promotions.
+        </p>
+    <h4>Responsibilities</h4>
+    <p>
+        Checking orders before delivery to ensure that the correct products have been made, and that charges are accurate.
+        Transporting items to customers at their desired locations. Managing cash and card payments upon delivery, as needed.
+        Adhering to road and traffic regulations. Remaining up-to-date with the restaurant’s promotions, and informing customers
+        of these accordingly. Anticipating and responding to customers’ queries and complaints.</p>
+    <h4>Requirements</h4>
+    <p>High school diploma or equivalent.Valid driver’s license for the area in which you will be working. Friendly,
+        service-oriented disposition. Excellent organizational and interpersonal skills. Prior experience in a similar position
+        will be advantageous. Able to work shifts, over weekends, and on public holidays, as needed.</p>
+
+    </div>
+
+
+<div class="position_text2">
+        <h2>Pizza Chef</h2>
+        <p>
+            We are looking for a Pizza Chef to join our kitchen staff and make delicious pizzas based on both traditional
+            and modern recipes. Pizza Chef responsibilities include preparing pizza dough, slicing and chopping toppings
+            like vegetables and meats and executing customers’ orders considering special requests. To be successful in
+            this role, you should have experience with various pizza types and be available to work during business hours.
+            Ultimately, you will help increase client satisfaction by preparing high-quality pizzas.
+        </p>
+    <h4>Responsibilities</h4>
+    <p>
+       Prepare pizzas out of our menu and based on custom orders. Bake a wide variety of pizza doughs, including thin crust,
+        thick crust and cheese-stuffed. Make fresh tomato, pesto and white cream sauces. Wash and chop vegetables (for
+        example, tomatoes, peppers, onions and mushrooms). Cut, slice and grill meats like chicken, ham and beef. Monitor
+        food stock and place orders, as needed. Use less traditional ingredients to appeal to a larger audience (for example,
+        vegan cheese and gluten-free flour). Cook appetizers, like mozzarella sticks, pizza bites, garlic breads and salads.
+        Recommend new recipes to update our menus. Maintain a clean cooking station and sterilize equipment.
+    </p>
+    <h4>Requirements</h4>
+    <p>
+        Work experience as a Pizza Chef or similar role in a restaurant. Hands-on experience with preparing and baking pizza
+        doughs. Familiarity with professional kitchen equipment and brick or stone oven. Understanding of food hygiene.
+        Good time-management skills. Team spirit. Flexibility to work in shifts, including weekends and evenings.
+    </p>
+    </div>
+
+<div class="position_text3">
+        <h2>Cashier</h2>
+        <p>
+            We are looking for a Cashier to manage all transactions with customers accurately and efficiently. Cashier
+            responsibilities include receiving payments and issuing receipts, gift-wrapping packages and keeping track of
+            all cash and credit transactions. To be successful in this role, you should have previous experience in a
+            customer service position and good knowledge of how cash registers operate. You should also be available to
+            take evening and weekend shifts occasionally. Ultimately, you’ll ensure all transactions run smoothly and
+            will help us maximize customer satisfaction.
+        </p>
+        <h4>Responsibilities</h4>
+        <p>
+            Manage transactions with customers using cash registers. Scan goods and ensure pricing is accurate. Collect
+            payments whether in cash or creditIssue receipts, refunds, change or tickets. Redeem stamps and coupons. Cross-sell
+            products and introduce new ones. Resolve customer complaints, guide them and provide relevant information.
+            Greet customers when entering or leaving the store. Maintain clean and tidy checkout areas. Track transactions
+            on balance sheets and report any discrepancies. Bag, box or gift-wrap packages. Handle merchandise returns and
+            exchanges.
+        </p>
+        <h4>Requirements</h4>
+        <p>
+            Work experience as a Retail Cashier or in a similar role in sales. Basic PC knowledge. Familiarity with electronic
+            equipment, like cash register and POS. Good math skills. Strong communication and time management skills. Customer
+            satisfaction-oriented. High school degree.
+        </p>
+    </div>
+
+<div class="apply_text">
+        <h3>As a company, we’re committed
+            to providing an environment that is inclusive and that is free of barriers. This could be any barrier based on
+            age, race, ancestry, place of origin, colour, ethnic origin, citizenship, creed, sex (including pregnancy),
+            gender identity, gender expression, sexual orientation, record of offences, marital status, family status and
+            disability.</h3>
+
+    <div class="career_form_container">
+            <h1>Apply Now!</h1>
+            <form action="." method="POST"> {% csrf_token %}
+                <div class="career_form_page_contents">
+                    {{ form|crispy }}
+                    <input type='submit' value='Submit' class="submit btn btn-danger"/>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</html>
+{% endblock %}

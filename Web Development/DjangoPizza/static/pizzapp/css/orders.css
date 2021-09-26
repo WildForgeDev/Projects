@@ -1,0 +1,212 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+
+.order_items{
+    display: flex;
+    text-align: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0px 0px 0px auto;
+    max-width: 1500px;
+}
+
+.menu_category{
+    text-align: center;
+}
+
+.btn-primary{
+    background-color: black;
+    border-color: black;
+}
+
+.btn-outline-primary{
+    background-color: black;
+    border-color: black;
+}
+
+.card{
+    margin:5px;
+    width:287px
+}
+
+.order_title{
+    text-align: center;
+}
+
+.order_summary{
+    top: 0;
+    float: left;
+    position: sticky;
+    border: 1px solid rgba(0,0,0,.125);
+    margin: 5px 5px 0 0;
+}
+
+.order_item_container{
+    height: auto;
+    margin-bottom: 160px;
+}
+.btn-group{
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1500px;
+    margin: 20px 50px 20px 50px;
+}
+.custom_column1 {
+    float: left;
+    width: 67.5%;
+    padding: 5px;
+    height: auto;
+}
+
+.custom_column2 {
+  float: left;
+  width: 30%;
+  padding: 5px;
+  height: auto;
+}
+
+.custom_row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media screen and (max-width: 1012px) {
+  div.custom_column1 {
+  width: 50%;
+  }
+}
+
+@media screen and (max-width: 1012px) {
+  div.custom_column2 {
+  width: 50%;
+  }
+}
+
+.btn.btn-primary{
+    background-color: black;
+    border-color: black;
+}
+
+.btn.btn-outline-primary{
+    color: black;
+    background-color: transparent;
+    background-image: none;
+    border-color: black;
+}
+
+.btn-check:active+.btn-outline-primary, .btn-check:checked+.btn-outline-primary, .btn-outline-primary.active, .btn-outline-primary.dropdown-toggle.show, .btn-outline-primary:active{
+    color: #fff;
+    background-color: black;
+    border-color: black;
+}
+.btn-group-toggle .btn {
+  color: #fff;
+  background-color: black;
+  border-color: black;
+}
+
+.btn-info.active {
+    background-color: limegreen;
+}
+
+@media screen and (max-width: 2661px) {
+  div.order_summary {
+    top: 0;
+    position: sticky;
+  }
+}
+
+@media screen and (max-width: 2017px) {
+    div.order_summary {
+        top: 0;
+        position: sticky;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    div.order_summary {
+        top: 0;
+        position: sticky;
+    }
+}
+.btn.btn-dark{
+    width: 110px;
+}
+
+.custom_row{
+    display: flex;
+}
+
+.footer{
+    position: unset;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    background-color: black;
+}
+
+.form-group{
+    width: 80px !important;
+    display: -webkit-box;
+    margin: 20px 60px 20px 60px;
+}
+
+.requiredField{
+    margin-top: 5px;
+}
+
+.asteriskField {
+    display: none;
+}
+
+.quantity_entry{
+    margin-left: 10px;
+}
+
+.cart_totals{
+    margin: auto;
+}
+
+.order_summary_title{
+    text-align: center;
+    margin-bottom: 30px !important;
+}
+
+.subtotal_cell{
+    font-weight: bold;
+}
+
+.delivery_fee_cell{
+    font-weight: bold;
+}
+
+.delivery_fee_cell{
+    font-weight: bold;
+}
+
+.tax_cell{
+    font-weight: bold;
+}
+
+.grand_total_cell{
+    font-weight: bold;
+}
+
+.checkout_button{
+    text-align: center;
+    margin-top: 30px;
+}
+
+.product_table{
+    margin: auto;
+}
+
+.order_card{
+    width:370px;
+}

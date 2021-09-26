@@ -1,0 +1,36 @@
+.textinput.textInput.form-control{
+    width: 300px
+}
+.requiredField{
+    display: none;
+}
+
+.page_contents{
+    text-align: center;
+}
+.btn-group{
+    margin-bottom:30px
+}
+
+.textinput.textInput.form-control{
+    margin: 0px;
+}
+
+.submit{
+    margin: 20px;
+}
+
+.delivery_btn_container{
+    margin-top: 20px;
+}
+.customer_form_container{
+    text-align: center;
+}
+
+.footer{
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+  background-color: black;
+}

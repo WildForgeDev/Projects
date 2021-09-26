@@ -1,0 +1,137 @@
+.order_confirmation_title{
+    text-align: center;
+}
+
+.list_title{
+    text-align: center;
+}
+
+.order_image_view{
+    height: 120px;
+    width: 120px;
+}
+
+.column_left{
+    float: left;
+    width: auto;
+    height: 100%;
+}
+
+.column_center{
+    text-align: center;
+    width: auto;
+    margin: auto;
+}
+
+.column_right{
+    float: right;
+    width: auto;
+    height: 100%;
+}
+
+.order_item_table{
+    margin:auto;
+}
+
+.order_image{
+    height: 122px;
+}
+
+.order_item_description{
+    width: 400px;
+
+}
+
+.order_item_quantity{
+    width: 100px;
+}
+
+.order_item_price{
+    width: 100px;
+}
+
+.edit_item_btns{
+    width:100px;
+    min-width: 100px;
+    max-width: 100px;
+}
+
+.editbtn1{
+    width: 50px;
+}
+
+.editbtn2{
+    width: 80px;
+}
+
+.remove_item_btns{
+    width:100px;
+    min-width: 100px;
+    max-width: 100px;
+}
+
+.border_cell{
+    border-style: solid;
+    border-width: 1px;
+    border-color: #bdbfbe;
+}
+
+.amount{
+    width:70px;
+}
+
+.review_contents {
+  display: flex;
+}
+
+.order_item_row{
+    min-width: 410px;
+    max-width: 859px;
+}
+
+.cart_totals{
+    float: right;
+}
+
+.subtotal_number_cell{
+    width: 100px;
+    /*text-align: left;*/
+}
+
+.subtotal_cell{
+    width: 100px;
+    /*text-align: right;*/
+}
+
+.checkout_button{
+    width: 200px;
+    float: right;
+}
+
+.cancel_button{
+    width: 100px;
+}
+
+/*.delivery_fee_cell{*/
+/*    text-align: right;*/
+/*}*/
+
+/*.tax_cell{*/
+/*    text-align: right;*/
+/*}*/
+
+/*.grand_total_cell{*/
+/*    text-align: right;*/
+/*}*/
+
+/*.delivery_fee_number_cell{*/
+/*    text-align: left;*/
+/*}*/
+
+/*.tax_number_cell{*/
+/*    text-align: left;*/
+/*}*/
+
+/*.grand_total_number_cell{*/
+/*    text-align: left;*/
+/*}*/

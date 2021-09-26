@@ -1,0 +1,93 @@
+{% extends 'pizzapp/base.html' %}
+{% load static %}
+{% load my_filters %}
+{% block content %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Locations</title>
+    <link href="{% static '/pizzapp/css/locations.css' %}" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+
+<div class="location_title">
+    <h1>Our Locations</h1>
+</div>
+<div class="location_text">
+        <h2>Django's Brick Oven Pizza currently has two locations. Our first and original location is in downtown Colorado Springs,
+            CO and our second is in Lakewood, CO. The popularity of our pizza has allowed us to start planning additional locations
+            and begin our master plan to be a national chain. Stay tuned for announcements for additional locations.</h2>
+    </div>
+<div class="location_contents">
+     <div class="location_row">
+        <div class="location_column">
+            <div class="location_map1">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3107.424360852316!2d-104.82534968515662!3d38.84564215759934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8713454009ed7841%3A0xefc07341f2c05696!2s810%20N%20Tejon%20St%2C%20Colorado%20Springs%2C%20CO%2080903!5e0!3m2!1sen!2sus!4v1622074308018!5m2!1sen!2sus" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+            <div class="location_info1">
+                <div class ="location_CS">
+                    <h3>Colorado Springs Location & Hours</h3>
+                </div>
+                <div class ="location_CS">
+                    <h5>Phone Number: (555)555-5555</h5>
+                </div>
+                <div class ="location_CS">
+                    <h5>Address: 810 N Tejon St</h5>
+                </div>
+                <div class ="location_CS">
+                    <h5>Colorado Springs, CO 80903</h5>
+                </div>
+                <div class ="location_CS">
+                    <h5>Hours of Operation:</h5>
+                </div>
+                <div class ="location_CS">
+                    <h5>Monday – Friday: 11:00 a.m. – Midnight</h5>
+                </div>
+                <div class ="location_CS">
+                    <h5>Saturday: 11:00 a.m. – 2:00 a.m.</h5>
+                </div>
+                <div class ="location_CS">
+                    <h5>Sunday: 12:00 p.m. – 6:00 p.m.</h5>
+                </div>
+
+            </div>
+        </div>
+        <div class="map_column">
+                <div class="location_mapTwo">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3069.612060855088!2d-105.11209408512887!3d39.70342560663521!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876b814238a8eb49%3A0xaa8a917620721614!2s715%20S%20Kipling%20St%2C%20Lakewood%2C%20CO%2080226!5e0!3m2!1sen!2sus!4v1622075470539!5m2!1sen!2sus" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+                <div class="location_info2">
+                    <div class ="location_LW">
+                    <h3>Lakewood Location & Hours</h3>
+                </div>
+                <div class ="location_LW">
+                    <h5>Phone Number: (555)555-5556</h5>
+                </div>
+                <div class ="location_LW">
+                    <h5>Address: 715 S Kipling St</h5>
+                </div>
+                <div class ="location_LW">
+                    <h5>Lakewood, CO 80226</h5>
+                </div>
+                <div class ="location_LW">
+                    <h5>Hours of Operation:</h5>
+                </div>
+                <div class ="location_LW">
+                    <h5>Monday – Friday: 11:00 a.m. – Midnight</h5>
+                </div>
+                <div class ="location_LW">
+                    <h5>Saturday: 11:00 a.m. – 2:00 a.m.</h5>
+                </div>
+                <div class ="location_LW">
+                    <h5>Sunday: 12:00 p.m. – 6:00 p.m.</h5>
+                </div>
+                </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+{% endblock %}

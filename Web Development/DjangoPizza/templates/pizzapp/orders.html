@@ -1,0 +1,116 @@
+{% extends 'pizzapp/base.html' %}
+{% load static %}
+{% load crispy_forms_filters %}
+{% load my_filters %}
+{% block content %}
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Order Now!</title>
+    <link href="{% static '/pizzapp/css/orders.css' %}" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<!--should only run when page is loaded, on btn1 click, fade in the div1 id, which is the "item added" box.-->
+<!--then will fade the box out a few seconds later.-->
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.0.js"></script>
+<script>
+$(document).ready(function(){
+    $("button").click(function(){
+        $("#div1").fadeIn();
+        $("#div1").fadeOut(6000);
+    });
+});
+</script>
+
+
+</head>
+<body>
+
+<div class="order_title">
+    <h1>Place Your Order</h1>
+    <div id="div1" class="alert-box alert alert-success" role="alert" style="display: none;">
+        Item added to Order!
+    </div>
+</div>
+
+<div class="order_item_container">
+    <div class="menu_category">
+                <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                    {% for item in menu_categories %}
+                        {% if item.id == 1 %}
+                            <input type="radio" class="btn-check" data-id="{{ item.id }}" name="btnradio" id="btnradio{{ item.id }}" autocomplete="off" checked>
+                            <label class="btn btn-dark" for="btnradio{{ item.id }}">{{ item.product_type_description }}</label>
+                        {% else %}
+                            <input type="radio" class="btn-check" data-id="{{ item.id }}" name="btnradio" id="btnradio{{ item.id }}" autocomplete="off">
+                            <label class="btn btn-dark" for="btnradio{{ item.id }}">{{ item.product_type_description }}</label>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+    <div class="custom_row">
+        <div class="custom_column1">
+            <div class="order_items">
+                {% for instance in allproducts %}
+                    {% if instance.item_type_id.id == 1 %}
+                        <div class="card" data-type="{{ instance.item_type_id.id }}" data-menu-item = "{{ instance.pk }}" style="width: 18rem;">
+                    {% else %}
+                        <div class="card" data-type="{{ instance.item_type_id.id }}" data-menu-item = "{{ instance.pk }}" style="width: 18rem; display:none">
+                    {% endif %}
+                <img src="{% static 'pizzapp/images/order_menu/'%}{{ instance.image }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h6 class="card-title">{{ instance.name }}</h6>
+                    <button id="btn1" data-product="{{ instance.pk }}" data-action="add" class="btn btn-primary update-cart">Add to Order</button>
+                    <p class="card-text">${{ instance.price }}</p>
+                    <p class="card-text">{{ instance.description }}</p>
+                </div>
+                </div>
+                {% endfor %}
+                </div>
+            </div>
+            <div class="custom_column2">
+                <div class="order_summary">
+                    <div class="order_card">
+                        <div class="card-body">
+                            <h5 class="card-title order_summary_title">Order Summary</h5>
+                            <table class="product_table" id="product_table_id">
+                            	{% for instance in getcart %}
+                                <tr>
+                                    <td class="card-text quantity_item" id="quantity_item_id">{{ instance.quantity }} x</td>
+                                    <td class="card-text cart_item" id="cart_item_id">{{ instance.product_name }}</td>
+                                    <td class="card-text remove_item update-cart" data-cartitem="{{ instance.pk }}" data-action="remove"><a href="#"><img src="{%static '/pizzapp/images/icons/red-x.png' %}" alt="remove"></a></td>
+	                            </tr>
+                                {% endfor %}
+                            </table>
+                            <table class="cart_totals" id="cart_total_id">
+                                <tr>
+                                    <td class="card-text subtotal_cell" id="subtotal">Subtotal:</td>
+                                    <td class="card-text subtotal_number_cell" id="subtotal_number">${{ existing_order.subtotal }}</td>
+                                </tr>
+                                <tr>
+                                    <td class="card-text delivery_fee_cell"  id="delivery_fee">Delivery Fee:</td>
+                                    <td class="card-text delivery_fee_number_cell" id="delivery_fee_number">${{ existing_order.delivery_fee }}</td>
+                                </tr>
+                                <tr>
+                                    <td class="card-text tax_cell" id="tax">Tax:</td>
+                                    <td class="card-text tax_number_cell" id="tax_number">${{ existing_order.tax }}</td>
+                                </tr>
+                                <tr>
+                                    <td class="card-text grand_total_cell" id="grand_total">Grand Total:</td>
+                                    <td class="card-text grand_total_number_cell" id="grand_total_number">${{ existing_order.grand_total }}</td>
+                                </tr>
+                            </table>
+                            <div class="checkout_button">
+                            <a href="{% url 'review_order' %}" class="btn btn-primary">Checkout</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+{% endblock %}

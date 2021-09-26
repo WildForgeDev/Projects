@@ -1,0 +1,59 @@
+{% extends 'pizzapp/base.html' %}
+{% load static %}
+{% load my_filters %}
+{% block content %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Events</title>
+    <link href="{% static '/pizzapp/css/events.css' %}" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+
+
+<div class="events_title">
+    <h1>Events</h1>
+</div>
+<div class="events_welcome_text">
+        <h4>Django Brick Oven Pizza's private event spaces are available to host your next celebration. If you decide to choose us for your
+        special event, you can expect delicious food, great service, and a fun atmosphere, all at a reasonable price. Let us take care of the
+        decorations, the food, and the entertainment so you can relax and enjoy.</h4>
+    </div>
+<div class="event_contents">
+    <div class="event_row">
+        <div class="event_column">
+            <div class="event_pic_container">
+                <img class="event_pic" src="{% static 'pizzapp/images/events/events3.jpg' %}">
+            </div>
+            <div class="event_content1">
+                <h5>We host special themed events every month. Check out our event calendar below so you can join us for cosplay, video game competitions, trivia night, comic book readings, and much much more!</h5>
+            </div>
+        </div>
+        <div class="event_column">
+            <div class="event_content2">
+                <h5>We offer event packages for fundraisers, birthday parties, business gatherings, and holiday parties. We have a full audio visual set up in our event spaces and we contract with local
+                     businesses to provide DJ services, decorating, custom cakes, flower arrangements, entertainment options, and much more. You can rent one of our rooms and have your event catered all in one place. </h5>
+            </div>
+            <div class="event_pic_container">
+                <img class="event_pic" src="{% static 'pizzapp/images/events/events4.jpg' %}">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="event_information">
+    <h5>
+        Please give us a call at (555)-555-5555 or email us to get pricing and availability for our services.
+    </h5>
+</div>
+
+<div class="event_calendar">
+    <iframe class='large_calendar' src="https://calendar.google.com/calendar/embed?height=500&amp;wkst=1&amp;bgcolor=%23616161&amp;ctz=America%2FDenver&amp;src=Y180Z2IyZDIyZnY3dmR0aDk0a2Zha3ZqYnBkMEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23EF6C00&amp;showTitle=1&amp;showTz=1&amp;showCalendars=0&amp;showTabs=0&amp;showPrint=0&amp;title=Django%20Brick%20Oven%20Pizza%20Special%20Events" style="border:solid 1px #777" width="1000" height="800" frameborder="0" scrolling="no"></iframe>
+    <iframe class='small_calendar' src="https://calendar.google.com/calendar/embed?height=500&amp;wkst=1&amp;bgcolor=%23616161&amp;ctz=America%2FDenver&amp;src=Y180Z2IyZDIyZnY3dmR0aDk0a2Zha3ZqYnBkMEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23EF6C00&amp;showTitle=1&amp;showTz=1&amp;showCalendars=0&amp;showTabs=0&amp;showPrint=0&amp;title=Django%20Brick%20Oven%20Pizza%20Special%20Events" style="border:solid 1px #777" width="483" height="500" frameborder="0" scrolling="no"></iframe>
+</div>
+
+
+</body>
+</html>
+{% endblock %}

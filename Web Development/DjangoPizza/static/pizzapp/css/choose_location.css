@@ -1,0 +1,21 @@
+.card-body{
+    text-align: center;
+}
+
+.Header{
+    text-align: center;
+    margin: 30px;
+}
+
+.location_items{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+
+.location_box{
+    display: inline-block;
+}

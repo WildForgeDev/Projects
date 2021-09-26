@@ -1,0 +1,137 @@
+{% load crispy_forms_filters %}
+{% load static %}
+{% load my_filters %}
+
+<html>
+    <head>
+    <meta charset="utf-8">
+    <title>Welcome!</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link href="{% static '/pizzapp/css/style.css' %}" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    {% load static %}
+    <script src="{% static 'pizzapp/js/jquery-3.4.1.min.js' %}"></script>
+    <script src="{% static 'pizzapp/js/app.js' %}"></script>
+</head>
+<body>
+<div class="banner">
+    <img id="top" class="banner-image" src="{%static '/pizzapp/images/banners/banner.jpg' %}" alt="Banner">
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'menu' %}">Menu</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'guest_or_user' %}">Order</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'discounts' %}">Discounts</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'events' %}">Events</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'locations' %}">Locations</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'careers' %}">Careers</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'contact_us' %}">Contact Us</a>
+            </li>
+            <li class="nav-item">
+                {% if user.is_authenticated %}
+                    <a class="nav-link active" aria-current="page" href="{% url 'logout' %}">Logout</a>
+                {% else %}
+
+                    <a class="nav-link active" aria-current="page" href="{% url 'login' %}">Login</a>
+                    </li>
+                    <li>
+                    <a class="nav-link active" aria-current="page" href="{% url 'register' %}">Register</a>
+                {% endif %}
+            </li>
+        </ul>
+    </div>
+</nav>
+	<center>
+
+		{% block content %}
+
+		{% endblock %}
+	</center>
+<br><br>
+<center>
+    <img src="{%static '/pizzapp/images/banners/final.png' width;500px; %}" alt="The Original">
+</center>
+
+<br><br>
+    <center><h1 font-family="Serif">~A little about us~</h1>
+	<h3>• Django Pizza was founded in 1992 by four college friends in Colorado
+Springs, Colorado. As college students one of their staple diets was pizza and they
+were not satisfied with the options available to them at the time. What started out as a
+mere frustration morphed into an inspiration to throw the pizza market on its head.
+Chris, Tyler, Jeffery, and Richard pooled their meager resources together and opened
+their first brick oven pizza restaurant in April 1992. Since then, they have expanded to 3
+separate locations throughout the greater Colorado Springs and have been named the
+best pizza restaurant ongoing since 2016. Django Brick Oven Pizza continues to strive
+to provide the best pizza with the freshest ingredients coupled with outstanding customer
+service and hopes to expand their legacy to the Denver metro area by 2022.<br><br>
+• Django’s notoriety is their brick oven pizzas. However, Django’s also offers sides such
+as breadsticks, cheesy bread, various flavors of chicken wings as well as select
+beverages. While delivery is limited to pizza, sides and non-alcoholic beverages, each
+location also offers a variety of local craft beer on tap to help support our local
+microbreweries.
+	</h3>
+
+<marquee behavior="scroll" direction="right">
+
+    <img src="{%static '/pizzapp/images/order_menu/baked_rigatoni.jpg' %}" width="150px">
+    <img src="{%static '/pizzapp/images/order_menu/meat_lovers.jpg' %}" width="150px">
+    <img src="{%static '/pizzapp/images/order_menu/pizza_wings.jpg' %}" width="150px">
+    <img src="{%static '/pizzapp/images/order_menu/brownie.jpg' %}" width="150px">
+    <img src="{%static '/pizzapp/images/order_menu/cinnamon_sugar_dough_knots.jpg' %}" width="150px">
+    <img src="{%static '/pizzapp/images/order_menu/chocolate_milkshake.jpg' %}" width="150px">
+    <img src="{%static '/pizzapp/images/order_menu/veggie_pizza.jpg' %}" width="150px">
+    <img src="{%static '/pizzapp/images/order_menu/the_chris.jpg' %}" width="150px">
+    <img src="{%static '/pizzapp/images/order_menu/cheesy_breadsticks.jpg' %}" width="150px">
+    <img src="{%static '/pizzapp/images/order_menu/the_tyler.jpg' %}" width="150px">
+    <img src="{%static '/pizzapp/images/order_menu/fire_hot_wings.jpg' %}" width="150px">
+    <img src="{%static '/pizzapp/images/order_menu/peanut_butter_cookies.jpg' %}" width="150px">
+
+
+</marquee>
+
+<br><br>
+<button class="button-top"><a href="#top">TOP</a></button><br>
+To start your order, click button to return to the top!<br>
+</center>
+<br><br><br><br><br><br><br><br><br><br><br>
+<div class="footer">
+    <div class="social_media_icons">
+        <a href="https://www.facebook.com/" target="_blank"><img class="sm sm-facebook" src="{%static '/pizzapp/images/icons/facebook.png' %}" alt="facebook"></a>
+        <a href="https://www.instagram.com/" target="_blank"><img class="sm sm-instagram" src="{%static '/pizzapp/images/icons/instagram.png' %}" alt="instagram"></a>
+        <a href="https://twitter.com/" target="_blank"><img class="sm sm-twitter" src="{%static '/pizzapp/images/icons/twitter.png' %}" alt="twitter"></a>
+    </div>
+    <div class="disclaimer">
+        <p>© 2021 Django Pizza, LLC. All Rights Reserved. The Django Brick Oven Pizza Name, Logos, and Related Marks Are Trademarks Of Django Brick Oven Pizza, LLC. All Other Trademarks Are The Property Of Their Respective Owners.</p>
+    </div>
+</div>
+
+</body>
+</html>

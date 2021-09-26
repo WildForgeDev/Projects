@@ -1,0 +1,43 @@
+{% extends 'pizzapp/base.html' %}
+{% load crispy_forms_filters %}
+{% load static %}
+{% load my_filters %}
+{% block content %}
+<html lang="en">
+<!doctype html>
+<head>
+    <meta charset="utf-8">
+    <title>Confirmation</title>
+    <link href="{% static '/pizzapp/css/order_confirmation.css' %}" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.0.js"></script>
+
+</head>
+<body>
+
+<div class="order_confirmation_title">
+    <h1>Thank you {{existing_customer.first_name}}, your order was successfully submitted!<br>We have received your {{payment_name}}
+        payment and we are preparing your order.<br>We will see you in 35 minutes!</h1>
+</div>
+<div class="col-25">
+    <div class="container">
+        <h4>Order Summary
+            <span class="price" style="color:black">
+
+            </span>
+        </h4>
+        {% for instance in getcart %}
+            <p><a href="#">{{ instance.product_name }}</a> <span class="price">{{ instance.price }}</span></p>
+        {% endfor %}
+        <hr>
+        <p class="subtotal">Subtotal <span class="subtotal" style="color:black"><b>${{ existing_order.subtotal }}</b></span></p>
+        <p class="delivery_fee">Delivery Fee <span class="delivery_fee" style="color:black"><b>${{ existing_order.delivery_fee }}</b></span></p>
+        <p class="tax">Tax <span class="tax" style="color:black"><b>${{ existing_order.tax }}</b></span></p>
+        <p class="grand_total">Grand Total <span class="grand_total" style="color:black"><b>${{ existing_order.grand_total }}</b></span></p>
+
+    </div>
+</div>
+
+</body>
+</html>
+{% endblock %}

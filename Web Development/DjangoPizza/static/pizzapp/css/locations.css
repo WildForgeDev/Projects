@@ -1,0 +1,65 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+.location_title{
+    text-align: center;
+}
+
+.location_column {
+    float: left;
+    max-width: 750px;
+    padding: 5px;
+    height: auto;
+}
+.location_row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.location_row{
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px 50px 20px 50px;
+}
+
+.location_info1{
+    margin: 20px;
+}
+
+.location_info2{
+    margin: 20px;
+}
+
+.location_CS{
+    text-align: center;
+    margin: 20px;
+}
+.location_LW{
+    text-align: center;
+    margin: 20px;
+}
+.location_text{
+    text-align: center;
+    margin: auto;
+    padding: 50px;
+    max-width: 1600px;
+}
+
+.location_mapOne{
+    text-align: center;
+}
+.location_mapTwo{
+    text-align: center;
+}
+
+.footer{
+    position: unset;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    background-color: black;
+}

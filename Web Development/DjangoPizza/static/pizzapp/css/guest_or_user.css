@@ -1,0 +1,29 @@
+.page_description{
+    text-align: center;
+    margin: 20px;
+}
+
+.page_information{
+    display: flex;
+    justify-content: center;
+}
+
+.buttons_of_choice{
+    width: 300px;
+    text-align: center;
+}
+
+.btn_1{
+    margin: 5px;
+    width: 300px;
+}
+
+.btn_2{
+    margin: 5px;
+    width: 300px;
+}
+
+.btn_3{
+    margin: 5px;
+    width: 300px;
+}

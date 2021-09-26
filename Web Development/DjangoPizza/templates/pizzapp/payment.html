@@ -1,0 +1,125 @@
+{% extends 'pizzapp/base.html' %}
+{% load static %}
+{% load crispy_forms_filters %}
+{% load my_filters %}
+{% block content %}
+<!doctype html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Payment</title>
+    <link href="{% static '/pizzapp/css/payment.css' %}" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.0.js"></script>
+
+</head>
+<body>
+    <div class="payment_header">
+        <h4>Please Choose How You Want To Pay</h4>
+    </div>
+    <div class="payment-dropdown">
+        <select id="payment-select" class="form-select payment-select" aria-label="Default select example">
+            <option selected>Select a Payment</option>
+            <option value="2">Credit Card</option>
+            <option value="3">Charge to Manager</option>
+            <option value="1">Cash on Delivery</option>
+        </select>
+    </div>
+    <div class="row">
+        <div class="col-75 credit-card-payment">
+            <div class="container">
+                <form method="post" class="post-form" action="{% url 'cc_payment' %}">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col-50">
+                            <h3>Billing Address</h3>
+                            <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+                            <input type="text" id="fname" name="billing_name" placeholder="John M. Doe">
+                            <label for="email"><i class="fa fa-envelope"></i> Email</label>
+                            <input type="text" id="email" name="billing_email" placeholder="john@example.com">
+                            <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+                            <input type="text" id="adr" name="billing_address" placeholder="542 W. 15th Street">
+                            <label for="city"><i class="fa fa-institution"></i> City</label>
+                            <input type="text" id="city" name="billing_city" placeholder="New York">
+                            <div class="row">
+                                <div class="col-50">
+                                    <label for="state">State</label>
+                                    <input type="text" id="billing_state" name="billing_state" placeholder="NY">
+                                </div>
+                                <div class="col-50">
+                                    <label for="zip">Zip</label>
+                                    <input type="text" id="billing_zip" name="billing_zip" placeholder="10001">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-50">
+                            <h3>Payment</h3>
+                            <label for="fname">Accepted Cards</label>
+                            <div class="icon-container">
+                                <i class="fa fa-cc-visa" style="color:navy;"></i>
+                                <i class="fa fa-cc-amex" style="color:blue;"></i>
+                                <i class="fa fa-cc-mastercard" style="color:red;"></i>
+                                <i class="fa fa-cc-discover" style="color:orange;"></i>
+                            </div>
+                            <label for="cname">Name on Card</label>
+                            <input type="text" id="billing_cc_name" name="billing_cc_name" placeholder="John M Doe">
+                            <label for="ccnum">Credit card number</label>
+                            <input type="text" id="billing_cc_number" name="billing_cc_number" placeholder="1111-2222-3333-4444">
+                            <label for="expmonth">Exp Month</label>
+                            <input type="text" id="billing_exp_month" name="billing_exp_month" placeholder="September">
+                            <div class="row">
+                                <div class="col-50">
+                                    <label for="expyear">Exp Year</label>
+                                    <input type="text" id="billing_exp_year" name="billing_exp_year" placeholder="2018">
+                                </div>
+                                <div class="col-50">
+                                    <label for="cvv">CVV</label>
+                                    <input type="text" id="billing_cvv" name="billing_cvv" placeholder="352">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="submit" value="Order Now" class="btn submit_cc_payment">
+                </form>
+            </div>
+        </div>
+        <div class="charge-to-manager-payment">
+            <h6 class="charge-to-manager-header">Please enter your promo code.</h6>
+            <form method="post" class="post-form" action="{% url 'charge_to_manager_payment' %}">
+                    {% csrf_token %}
+                <input type="text" id="promo-code" name="promo-code" class="promo-code-text-box">
+                <button type="submit" value="Submit" class="btn btn-success manager-btn"> Order Now</button>
+            </form>
+        </div>
+        <div class="cash-on-delivery">
+            <form method="post" class="post-form" action="{% url 'cash_payment' %}">
+                {% csrf_token %}
+                <button type="submit" value="Submit" class="btn btn-success cash-btn">Order Now</button>
+            </form>
+        </div>
+        <div class="col-25">
+            <div class="container">
+                <h4>Cart
+                    <span class="price" style="color:black">
+                        <i class="fa fa-shopping-cart"></i>
+                        <b>{{ cart_item_number }}</b>
+                    </span>
+                </h4>
+                {% for instance in getcart %}
+                    <p><a href="#">{{ instance.product_name }}</a> <span class="price">{{ instance.price }}</span></p>
+                {% endfor %}
+                <hr>
+                <p class="subtotal">Subtotal <span class="subtotal" style="color:black"><b>${{ existing_order.subtotal }}</b></span></p>
+                <p class="delivery_fee">Delivery Fee <span class="delivery_fee" style="color:black"><b>${{ existing_order.delivery_fee }}</b></span></p>
+                <p class="tax">Tax <span class="tax" style="color:black"><b>${{ existing_order.tax }}</b></span></p>
+                <p class="grand_total">Grand Total <span class="grand_total" style="color:black"><b>${{ existing_order.grand_total }}</b></span></p>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
+</body>
+</html>

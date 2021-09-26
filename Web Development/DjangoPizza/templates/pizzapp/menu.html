@@ -1,0 +1,24 @@
+{% extends 'pizzapp/base.html' %}
+{% load static %}
+{% load my_filters %}
+{% block content %}
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Menu</title>
+    <link href="{% static '/pizzapp/css/menu.css' %}" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+
+<div class="menu_pic">
+    <img class="Menu-image" src="/static/pizzapp/images/Menu/Menu.jpg" alt="" width="1800" height="2700">
+</div>
+
+
+
+
+</body>
+</html>
+{% endblock %}

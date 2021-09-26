@@ -1,0 +1,44 @@
+{% extends 'pizzapp/base.html' %}
+{% load static %}
+{% load crispy_forms_filters %}
+{% load my_filters %}
+{% block content %}
+<!doctype html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Payment</title>
+    <link href="{% static '/pizzapp/css/choose_location.css' %}" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.0.js"></script>
+</head>
+<body>
+
+<div class="Header">
+    <h4>Please Choose a Location for Pick-Up</h4>
+</div>
+<div class="location_items">
+<form method="post" class="post-form" action="{% url 'get_location' %}">
+    {% csrf_token %}
+    {% for instance in all_locations %}
+        <div class="location_box">
+            <div class="card" style="width: 18rem;">
+                <img src="{% static 'pizzapp/images/locations/'%}{{ instance.location_image }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title" data-location="{{ instance.pk }}">{{ instance.location_name }}</h5>
+                    <p class="card-text">{{ instance.location_address }}</p>
+                    <p class="card-text">{{ instance.location_city }}</p>
+                    <p class="card-text">{{ instance.location_state }}</p>
+                    <p class="card-text">{{ instance.location_zip }}</p>
+                    <button class="btn btn-success" name="location" value="{{ instance.pk }}">Choose Location</button>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</form>
+</div>
+</body>
+</html>
+{% endblock %}

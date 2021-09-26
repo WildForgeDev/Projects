@@ -1,0 +1,113 @@
+.textinput.textInput.form-control{
+    width: 300px;
+    margin: 0;
+}
+
+.requiredField{
+    display: none;
+}
+
+.page_contents{
+    padding-left: 50px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.btn-group{
+    margin-bottom:30px
+}
+
+.emailinput.form-control{
+    /*width: 300px;*/
+    margin-top: 20px
+
+}
+
+
+.submit{
+    margin: 20px;
+}
+
+/*.delivery_btn_container{*/
+/*    margin-top: 20px;*/
+/*    padding-left: 40px;*/
+/*}*/
+
+.registration_form_page_contents{
+    padding-left: 40px;
+
+}
+
+.customer_form_container{
+    text-align: center;
+
+}
+
+.footer{
+    position: unset;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    background-color: black;
+}
+
+.form-text.text-muted{
+    display: none;
+}
+
+.emailinput.form-control{
+    text-align: center;
+}
+
+.form-control{
+    margin: 0;
+}
+
+.username_field{
+    margin: 0;
+}
+
+.password_field1{
+    margin: 0;
+}
+
+.password_field2{
+    margin: 0;
+}
+
+.first_name{
+    margin: 0;
+}
+
+.last_name{
+    margin: 0;
+}
+
+.delivery_type{
+    margin: 0;
+}
+
+.address{
+    margin: 0;
+}
+
+.city{
+    margin: 0;
+}
+
+.state{
+    margin: 0;
+}
+
+.zip_code{
+    margin: 0;
+}
+
+.phone_number{
+   margin: 0;
+}
+
+.email_field{
+    margin: 0;
+}

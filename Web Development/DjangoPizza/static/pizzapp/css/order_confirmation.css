@@ -1,0 +1,64 @@
+.order_confirmation_title{
+    margin-top: 30px;
+    text-align: center;
+}
+
+
+.list_title{
+    text-align: center;
+    border: 1px solid rgba(0,0,0,.125);
+    color: white;
+    background-color: black;
+}
+
+.confirmation_contents{
+    text-align: center;
+    margin: 50px 10px 10px 10px;
+}
+
+.order_total_list_contents{
+    text-align: center;
+    padding: 20px 20px 20px 90px;
+}
+
+.confirmation_box{
+    border: 1px solid rgba(0,0,0,.125);
+    display: inline-block;
+}
+
+.order_total_item_titles{
+    text-align: right;
+    list-style-type: none;
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    padding-top: 30px;
+    padding-left: 0;
+}
+.order_total_items{
+    text-align: left;
+    list-style-type: none;
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    padding: 10px;
+}
+
+.ul{
+    display: inline-block;
+    *display: inline;
+    zoom: 1
+}
+
+.estimated_delivery_time{
+    margin: 50px;
+}
+
+.footer{
+    position: unset;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    background-color: black;
+}

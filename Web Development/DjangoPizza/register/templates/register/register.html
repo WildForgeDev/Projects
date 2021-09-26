@@ -1,0 +1,37 @@
+{% extends 'pizzapp/base.html' %}
+{% load crispy_forms_filters %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% load my_filters %}
+{% block content %}
+<!doctype html>
+<html lang="EN">
+<head>
+    <meta charset="utf-8">
+    <title>Create an Account</title>
+    <link href="{% static '/pizzapp/css/register.css' %}" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+    <div class="page_contents">
+
+            <h5>Please fill out the information below.</h5>
+
+    </div>
+
+    <div class="customer_form_container">
+    <form action="." method="POST" class="form-group" data-validate-username-url="{% url 'validate_username' %}">
+        {% csrf_token %}
+        <div class="registration_form_page_contents">
+
+        {{ user_form|crispy }}
+
+
+        <input type="submit"  value='Submit' class="btn btn-success">
+        </div>
+        <p>Already have an account? Click <a href="{% url 'login' %}">here.</a></p>
+    </form>
+    </div>
+
+</body>
+</html>
+{% endblock %}

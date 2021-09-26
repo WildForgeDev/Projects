@@ -1,0 +1,32 @@
+{% extends 'pizzapp/base.html' %}
+{% load crispy_forms_filters %}
+{% load static %}
+{% load my_filters %}
+{% block content %}
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Info</title>
+    <link href="{% static '/pizzapp/css/customer_entry_form.css' %}" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div class="page_contents">
+    <div class="delivery_btn_container">
+        <h5>Please fill out the information below.</h5>
+        <h6>What kind of order is this?</h6>
+        </div>
+    </div>
+    <div class="customer_form_container">
+        <form action="." method="POST"> {% csrf_token %}
+            <div class="customer_form_page_contents">
+                {{ form|crispy }}
+                <input type='submit' value='Submit' class="submit btn btn-danger"/>
+            </div>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
+{% endblock %}
