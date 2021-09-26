@@ -1,0 +1,107 @@
+{% load static %}
+{% load crispy_forms_filters %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Home | All Saints of Russia Orthodox Church</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="header">
+        <img id="top" class="banner-image" src="{%static '/main/images/headers/header-placeholder.gif' %}" alt="Banner">
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    Home
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="{% url 'index' %}">Home</a></li>
+                    <li><a class="dropdown-item" href="{% url 'schedule_of_services' %}">Schedule of Services</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    Our Parish
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="{% url 'our_parish' %}">Our Parish</a></li>
+                    <li><a class="dropdown-item" href="{% url 'photo_gallery' %}">Photo Gallery</a></li>
+                    <li><a class="dropdown-item" href="{% url 'video_gallery' %}">Video Gallery</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    About Orthodox Faith
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="{% url 'about_orthodox_faith' %}">About Orthodox Faith</a></li>
+                    <li><a class="dropdown-item" href="{% url 'orthodox_calendar' %}">Orthodox Calendar</a></li>
+                    <li><a class="dropdown-item" href="{% url 'prayers' %}">Prayers</a></li>
+                    <li><a class="dropdown-item" href="{% url 'recommended_links' %}">Recommended Links</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    Visitor Information
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="{% url 'visitor_information' %}">Visitor Information</a></li>
+                    <li><a class="dropdown-item" href="{% url 'map_directions' %}">Map / Directions</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    Publications
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="{% url 'publications' %}">Publications</a></li>
+                    <li><a class="dropdown-item" href="{% url 'orthodox_way' %}">Orthodox Way</a></li>
+                    <li><a class="dropdown-item" href="{% url 'prayer_book' %}">Prayer Book</a></li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Donations</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Contact Us</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+    {% block content %}
+    {% endblock %}
+<div class="footer">
+        &copy; 2021 All Saints of Russia Orthodox Church <br />
+        A parish of the <a href="http://www.wadiocese.com/">Western-American Diocese</a> of ROCOR in Denver, Colorado,
+        USA.<br />
+        Reproduction, in part or in whole, of any materials from this site must indicate the source: <a
+            href="http://rocadenver.org">www.rocadenver.org</a><br />
+        3274 E Iliff Ave Denver, Colorado 80210; Telephone: 303-757-3533<br />
+    </div>
+
+    {#JQuery and Bootstrap Libraries Do Not Remove#}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</body>
+</html>

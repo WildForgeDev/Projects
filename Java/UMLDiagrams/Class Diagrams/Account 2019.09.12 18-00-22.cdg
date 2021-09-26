@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Account">
+  <ClassDiagramComponents>
+    <Class name="Account" package="Company_Sales" visibility="public" isAbstract="true" xPosition="366.0" yPosition="32.0">
+      <Fields>
+        <Field name="accountId" type="int" visibility="protected"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="accountId"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="computeSales" returnType="double" visibility="package" isAbstract="true"/>
+        <Method name="setAccountId" returnType="int" visibility="public">
+          <Argument type="int" name="accountId"/>
+        </Method>
+        <Method name="getAccountId" returnType="int" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Services" package="" visibility="protected" xPosition="38.0" yPosition="335.0">
+      <Fields>
+        <Field name="accountId" type="int" visibility="protected"/>
+        <Field name="numberOfHours" type="int" visibility="private"/>
+        <Field name="ratePerHour" type="double" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="accountId"/>
+          <Argument type="int" name="numberOfHours"/>
+          <Argument type="double" name="ratePerHour"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="setNumberOfHours" returnType="void" visibility="public"/>
+        <Method name="setRatePerHour" returnType="void" visibility="public"/>
+        <Method name="getNumberOfHours" returnType="int" visibility="public"/>
+        <Method name="getRatePerHour" returnType="double" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="computeSales" returnType="double" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Supplies" package="" visibility="protected" xPosition="519.0" yPosition="335.0">
+      <Fields>
+        <Field name="accountId" type="int" visibility="protected"/>
+        <Field name="numberOfItemsSold" type="int" visibility="private"/>
+        <Field name="pricePerItem" type="double" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="accountId"/>
+          <Argument type="int" name="numberOfItemsSold"/>
+          <Argument type="double" name="pricePerItem"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="setNumberOfItemsSold" returnType="void" visibility="public"/>
+        <Method name="setPricePerItem" returnType="void" visibility="public"/>
+        <Method name="getNumberOfItemsSold" returnType="int" visibility="public"/>
+        <Method name="getPricePerItem" returnType="double" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="computeSales" returnType="double" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="Supplies" target="Company_Sales.Account"/>
+    <IsRelation name="is" source="Services" target="Company_Sales.Account"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

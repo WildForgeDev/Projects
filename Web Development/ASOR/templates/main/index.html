@@ -1,0 +1,74 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% load crispy_forms_filters %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+    <link href="{% static '/main/css/index.css' %}" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div class="page-content">
+        <div class="sidebar">
+            <div class="sidebar-content">
+                <h6 class="sidebar-title">Schedule of Services</h6>
+                {% for item in schedule_of_services %}
+                {% if item.type_id == 1 %}
+                <div class="link-container">
+                    <a class="calendar-link" href="{% static '/main/documents/'%}{{ item.link }}">{{ item.title }}</a>
+                    <br>
+                </div>
+                {% else %}
+                <div class="link-container">
+                    <a class="announcement-link" href="{% static '/main/documents/'%}{{ item.link }}">{{item.title}}</a> <br>
+                </div>
+                {% endif %}
+                {% endfor %}
+                <h6 class="weekly-schedule">Weekly Schedule:</h6>
+                {% for item in weekly_schedule %}
+                <p class="weekday-title">{{ item.day }}</p>
+                <p class="weekday-schedule">{{ item.time }} {{ item.service }}</p>
+                {% endfor %}
+                {% for item in additional_announcements %}
+                {% if item.type_id == 1 %}
+                <p class="sidebar-warning">{{ item.body }}</p>
+                {% else %}
+                <p class="sidebar-message">{{ item.body }}</p>
+                {% endif %}
+                {% endfor %}
+            </div>
+            <div class="language-selector">
+                <a href="{% url 'index' %}"><img src="{% static '/main/images/icons/en.png' %}" alt="English">English</a><br>
+                <a href="{% url 'index_ru' %}"><img src="{% static '/main/images/icons/ru.png' %}" alt="Русский">Русский</a>
+            </div>
+            <div class="donate-container">
+                <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" name="submit"
+                    alt="PayPal - The safer, easier way to pay online!">
+            </div>
+        </div>
+
+        <div class="content-container">
+            {% for item in announcements %}
+            {% if current_day >= item.start_date and current_day <= item.end_date %} <div class="content">
+                <div class="image-container">
+                    <img class="announcement-image" src="{% static 'main/images/content-images/'%}{{ item.image_link }}" alt="">
+                </div>
+                <div class="title">{{ item.title|safe }}</div>
+                <br>
+                <div class="body">{{ item.body|safe }}</div>
+                <br>
+                <div class="link">{{ item.link|safe }}</div>
+                <br>
+                <div class="author">{{ item.author }}</div>
+        </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+    </div>
+</body>
+</html>
+{% endblock %}

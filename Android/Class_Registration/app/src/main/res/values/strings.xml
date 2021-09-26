@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Unit_3_Project_1</string>
+    <string name="max_grade">Max Grade:</string>
+    <string name="min_grade">Min Grade:</string>
+    <string name="avg_grade">Average Grade:</string>
+    <string name="submit_b1">Submit</string>
+    <string name="register_b1">Register for Classes</string>
+    <string name="letter_grade">Letter Grade</string>
+    <string name="register_b2">Register</string>
+    <string name="class_label">Classes:</string>
+    <string name="back_b1">Back</string>
+    <string name="reg_classes_label">Registered Classes:</string>
+    <string name="reset_b1">Reset Classes</string>
+    <string name="class_name_label">Class Name</string>
+    <string name="grade_percent_label">Grade %</string>
+    <string-array name="class_choice">
+        <item>CS311T - Mobile Programming</item>
+        <item>CS267T - Computer Algorithms</item>
+        <item>CS349T - Software Engineering</item>
+    </string-array>
+</resources>

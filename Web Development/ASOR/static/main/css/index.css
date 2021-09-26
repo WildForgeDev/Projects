@@ -1,0 +1,209 @@
+.header{
+}
+
+.banner-image{
+    width: 100%;
+    display: inline-block;
+}
+
+.footer{
+    text-align: center;
+    background: #898792;
+    color: #fff;
+    padding: 20px;
+    font-size: 13px;
+}
+
+.page-content{
+    display: flex;
+    background-color: rgb(179, 211, 235);
+}
+
+.sidebar{
+    min-width: 250px;
+    margin: 0 0 0 20px;
+}
+
+.content{
+    background-color: #87abdb;
+    padding: 20px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    margin-bottom: 5px;
+}
+
+.content-container{
+    margin: 0 20px 0 5px;
+}
+
+.author{
+    font-style: italic;
+    font-weight: bold;
+}
+
+.title{
+    color: #C02011;
+    font-weight: bold;
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border-width: 1px;
+    border-style: none none solid none;
+    border-color: black;
+}
+
+.sidebar-title{
+    text-align: center;
+    border-width: 1px;
+    border-style: none none solid none;
+}
+
+.sidebar-content{
+    display: block;
+    padding: 10px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    background-color: #87abdb;
+}
+
+.link-container{
+    text-align: center;
+}
+
+.announcement-link{
+    color:#C02011;
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;
+}
+
+.calendar-link{
+    color:#fff;
+    text-decoration: none;
+    text-align: center;
+}
+
+.weekly-schedule{
+    text-align: center;
+    border-width: 1px;
+    border-style: none none solid none;
+}
+
+.weekday-title{
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.weekday-schedule{
+    text-align: center;
+}
+
+
+.sidebar-warning{
+    color: #C02011;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.sidebar-message{
+    font-style: italic;
+    font-weight: bold;
+}
+
+.donate-container{
+    margin-top: 10px;
+    display: block;
+    padding: 10px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    background-color: #87abdb;
+    text-align: center;
+}
+
+.language-selector{
+    margin-top: 10px;
+    display: block;
+    padding: 10px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    background-color: #87abdb;
+    text-align: center;
+}
+
+.navbar .navbar-collapse {
+    text-align: center;
+}
+
+.navbar{
+    padding: 0;
+}
+
+.container-fluid{
+    padding: 0;
+}
+
+.navbar-toggler{
+    margin: auto;
+    width: 100%;
+    background: #942313;
+}
+
+.dropdown-item{
+    text-align: center;
+}
+
+.image-container{
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+.announcement-image{
+    max-width: 100%;
+    height: auto;
+}
+
+.body{
+    color: #550d08;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.author{
+    /*color: #dda44a;*/
+}
+
+nav .navbar-nav li a{
+    color:#e4b66e !important;
+}
+
+.navbar-collapse{
+    background: #942313;
+}
+
+.dropdown-item{
+    background: #942313;
+}
+
+.dropdown-item:hover{
+    background: #e4b66e;
+    color: #942313;
+}
+
+nav .navbar-nav li a:hover{
+    background: #e4b66e;
+    color: #942313 !important;
+}
+
+.dropdown-menu{
+    padding: 0 !important;
+}
+
+.weekday-title{
+    font-weight: bold;
+}
