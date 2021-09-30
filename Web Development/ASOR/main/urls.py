@@ -11,6 +11,7 @@ urlpatterns = [
     path('', index, name="index"),
     path('index_ru', index_ru, name="index_ru"),
     path('schedule_of_services/', schedule_of_services, name="schedule_of_services"),
+    path('schedule_of_services_ru/', schedule_of_services_ru, name="schedule_of_services_ru"),
     path('about_orthodox_faith/', about_orthodox_faith, name="about_orthodox_faith"),
     path('map_directions/', map_directions, name="map_directions"),
     path('orthodox_calendar/', orthodox_calendar, name="orthodox_calendar"),

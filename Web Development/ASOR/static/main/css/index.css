@@ -52,6 +52,7 @@
     border-width: 1px;
     border-style: none none solid none;
     border-color: black;
+    text-align: center;
 }
 
 .sidebar-title{
@@ -84,6 +85,7 @@
     color:#fff;
     text-decoration: none;
     text-align: center;
+    font-weight: bold;
 }
 
 .weekly-schedule{
@@ -140,21 +142,22 @@
 }
 
 .navbar{
-    padding: 0;
+    padding: 0 !important;
 }
 
 .container-fluid{
-    padding: 0;
+    padding: 0 !important;
 }
 
 .navbar-toggler{
-    margin: auto;
-    width: 100%;
-    background: #942313;
+    margin: auto !important;
+    width: 100% !important;
+    background: #942313 !important;
 }
 
 .dropdown-item{
     text-align: center;
+    background: #6f1b10 !important;
 }
 
 .image-container{
@@ -180,23 +183,20 @@
 
 nav .navbar-nav li a{
     color:#e4b66e !important;
+    text-align: center;
 }
 
 .navbar-collapse{
-    background: #942313;
-}
-
-.dropdown-item{
-    background: #942313;
+    background: #942313 !important;
 }
 
 .dropdown-item:hover{
-    background: #e4b66e;
+    background: #e4b66e !important;
     color: #942313;
 }
 
 nav .navbar-nav li a:hover{
-    background: #e4b66e;
+    background: #e4b66e !important;;
     color: #942313 !important;
 }
 

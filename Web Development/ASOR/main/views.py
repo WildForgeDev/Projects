@@ -49,6 +49,10 @@ def schedule_of_services(request):
     return render(request, "main/schedule_of_services.html")
 
 
+def schedule_of_services_ru(request):
+    return render(request, "main/schedule_of_services_ru.html")
+
+
 def about_orthodox_faith(request):
     return render(request, "main/about_orthodox_faith.html")
 

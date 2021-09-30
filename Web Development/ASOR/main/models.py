@@ -13,19 +13,26 @@ class ScheduleOfServicesType(models.Model):
     type_name = models.CharField(max_length=500, null=True)
 
 
+class TimeOverride(models.Model):
+    title = models.CharField(max_length=5)
+
+
 class ChurchAnnouncement(models.Model):
     type = models.ForeignKey(AnnouncementType, on_delete=models.CASCADE, blank=True, related_name="announcement_types")
     title = models.CharField(max_length=500, blank=True)
     body = models.CharField(max_length=3000, blank=True)
     author = models.CharField(max_length=100, blank=True)
+    title_ru = models.CharField(max_length=500, blank=True)
+    body_ru = models.CharField(max_length=3000, blank=True)
+    author_ru = models.CharField(max_length=100, blank=True)
     link = models.CharField(max_length=1000, blank=True)
     live_stream_link = models.CharField(max_length=1000, blank=True)
     image_link = models.CharField(max_length=1000, blank=True)
     start_date = models.DateField(blank=True)
     end_date = models.DateField(blank=True)
-    title_ru = models.CharField(max_length=500, blank=True)
-    body_ru = models.CharField(max_length=3000, blank=True)
-    author_ru = models.CharField(max_length=100, blank=True)
+    date_override = models.ForeignKey(TimeOverride, on_delete=models.CASCADE, null=True,
+                                      related_name="time_override")
+    display_order = models.IntegerField(null=True)
 
 
 class SidebarScheduleOfServices(models.Model):
@@ -35,6 +42,7 @@ class SidebarScheduleOfServices(models.Model):
                              related_name="schedule_of_services_type")
     title_ru = models.CharField(max_length=500, blank=True)
     link_ru = models.CharField(max_length=500, blank=True)
+    display_order = models.IntegerField(null=True)
 
 
 class SidebarWeeklySchedule(models.Model):
@@ -44,6 +52,7 @@ class SidebarWeeklySchedule(models.Model):
     day_ru = models.CharField(max_length=500, blank=True)
     time_ru = models.CharField(max_length=500, blank=True)
     service_ru = models.CharField(max_length=1000, blank=True)
+    display_order = models.IntegerField(null=True)
 
 
 class SidebarAdditionalAnnouncements(models.Model):
@@ -51,3 +60,4 @@ class SidebarAdditionalAnnouncements(models.Model):
     body_ru = models.CharField(max_length=3000, blank=True)
     type = models.ForeignKey(SidebarAnnouncementTypes, on_delete=models.CASCADE, null=True,
                              related_name="sidebar_announcement_types")
+    display_order = models.IntegerField(null=True)
