@@ -1,9 +1,17 @@
 .header{
+    width: 100%;
+    background: #b3d3eb;
+    height: 186px;
+    display: inline-block;
 }
 
-.banner-image{
-    width: 100%;
-    display: inline-block;
+/*.banner-image{*/
+/*    width: 100%;*/
+/*    */
+/*}*/
+
+.header_image{
+
 }
 
 .footer{
